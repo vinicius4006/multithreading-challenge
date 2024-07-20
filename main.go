@@ -20,9 +20,9 @@ func main() {
 	go requestViaCEP(cep, ch2)
 	select {
 	case cep1 := <-ch1:
-		println("BrasilAPI retornou primeiro: \n" + cep1)
+		println("Resultado mais rápido recebido da API: BrasilAPI\n" + cep1)
 	case cep2 := <-ch2:
-		println("ViaCEP retornou primeiro: \n" + cep2)
+		println("Resultado mais rápido recebido da API: ViaCEP\n" + cep2)
 	case <-time.After(time.Second):
 		println("timeout")
 	}
@@ -42,7 +42,7 @@ func requestBrasilAPI(cep string, ch chan string) {
 	}
 	defer res.Body.Close()
 	if res.StatusCode == 200 {
-		log.Println("CEP encontrado!")
+		println("CEP encontrado!")
 	}
 	bytes, err := io.ReadAll(res.Body)
 	if err != nil {
@@ -65,7 +65,7 @@ func requestViaCEP(cep string, ch chan string) {
 	}
 	defer res.Body.Close()
 	if res.StatusCode == 200 {
-		log.Println("CEP encontrado!")
+		println("CEP encontrado!")
 	}
 	bytes, err := io.ReadAll(res.Body)
 	if err != nil {
