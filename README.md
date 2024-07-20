@@ -37,7 +37,11 @@ As duas requisições serão feitas simultaneamente para as seguintes APIs:
 Após a execução bem-sucedida, a saída no terminal será semelhante a:
 
 ```sh
+
+Desafio Multithreading
 Digite seu CEP: 01153000
 CEP encontrado!
-Resultado mais rápido recebido da API: Via CEP
-Endereço: Rua da Consolação, Consolação, São Paulo - SP
+Resultado mais rápido recebido da API: BrasilAPI
+{"cep":"01153000","state":"SP","city":"São Paulo","neighborhood":"Barra Funda","street":"Rua Vitorino Carmilo","service":"open-cep"}
+
+
